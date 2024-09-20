@@ -7,4 +7,4 @@ def send_message(message):
     return jsonify({'message': message})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
