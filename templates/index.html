@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Message</title>
+    <script>
+        function fetchLatestMessage() {
+            fetch('/latest')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('message').innerText = data.last_message || 'No messages yet.';
+                });
+        }
+
+        // Refresh the message every 2 seconds
+        setInterval(fetchLatestMessage, 2000);
+    </script>
+</head>
+<body>
+    <h1>Latest Message</h1>
+    <p id="message">No messages yet.</p>
+</body>
+</html>
